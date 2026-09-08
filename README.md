@@ -5,9 +5,7 @@ Raspberry Pi 5 · Linux · Touchscreen menus · Cooling and power upgrades
 
 This was the follow-up to my Pi 4 handheld. I moved to a Pi 5, used a larger 6-inch screen, changed the power supply, and added touchscreen menu navigation. I also addressed the heat problem from the previous build by adding vents and copper heatsinks.
 
-Leandro Linares's handheld guide was my main reference, along with what I had learned from the first handheld and the mini TV.
-
-## What changed
+## My engineering changes
 
 | Part of the build | Pi 4 handheld | Pi 5 upgrade |
 | --- | --- | --- |
@@ -30,9 +28,9 @@ I used what I learned from adding touch controls to the mini TV to add menu navi
 
 The Pi 5 and larger display also needed a different power supply. I don't have the exact supply or screen model recorded.
 
-## Code and notes
+## Software and project files
 
-The repository includes **Leandro's original controller sketches**, unchanged. These handle physical gamepad inputs, not touchscreen navigation.
+The controller sketches can be browsed directly in this repository. They are unchanged reference code by Leandro Linares for physical gamepad inputs. My touchscreen configuration is not included.
 
 | Resource | Contents |
 | --- | --- |
@@ -45,9 +43,7 @@ I don't currently have photos, enclosure files, or my device configuration for t
 
 ## Credits
 
-Main reference: [Leandro Linares's handheld build guide](https://leandrolinares.com/blog/diy-handheld-game-console).
-
-The [Grizzly and Kodiak sketches](https://gist.github.com/lean8086/4cb525eae8061a3e8af11a29c369fec2) use [ArduinoJoystickLibrary](https://github.com/MHeironimus/ArduinoJoystickLibrary) by MHeironimus. Leandro's guide states [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); source details and reuse terms are in [UPSTREAM.md](upstream/leandro-gamepad/UPSTREAM.md).
+Main reference: [Leandro Linares's handheld build guide](https://leandrolinares.com/blog/diy-handheld-game-console). His included Grizzly and Kodiak sketches use MHeironimus's ArduinoJoystickLibrary. [Source details and reuse terms](upstream/leandro-gamepad/UPSTREAM.md), including the guide's CC BY-NC-SA 4.0 notice, are kept with the code.
 
 No ROMs, BIOS files, or operating-system images are included.
 
