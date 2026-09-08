@@ -1,74 +1,57 @@
 # Raspberry Pi 5 Touchscreen Handheld
 
-**May–December 2025 · Hardware integration · Embedded Linux · Touch input · Thermal design**
+**May–December 2025**  
+Raspberry Pi 5 · Linux · Touchscreen menus · Cooling and power upgrades
 
-A second-generation handheld emulation system built around a Raspberry Pi 5 and a 6-inch touchscreen. I revised the power hardware, added copper heatsinks and enclosure vents, and applied touchscreen experience from my mini TV to handheld menu navigation.
+This was the follow-up to my Pi 4 handheld. I moved to a Pi 5, used a larger 6-inch screen, changed the power supply, and added touchscreen menu navigation. I also addressed the heat problem from the previous build by adding vents and copper heatsinks.
 
-## My contributions
+Leandro Linares's handheld guide was my main reference, along with what I had learned from the first handheld and the mini TV.
 
-- **Platform upgrade:** Moved from the Pi 4B to the Pi 5 to expand the range of games I could run.
-- **Display and interface integration:** Increased the display from 5 to 6 inches and added touchscreen menu navigation.
-- **Power-system revision:** Changed the power supply to support the upgraded computer and larger screen.
-- **Cooling improvements:** Added copper heatsinks and vents in response to overheating in the previous enclosure.
-- **Cross-project development:** Combined lessons from the Pi 4 handheld with touch-input experience from the mini TV.
+## What changed
 
-## Hardware and software
-
-| Subsystem | My build |
-| --- | --- |
-| Computer | Raspberry Pi 5 |
-| Display and input | 6-inch touchscreen with menu navigation |
-| Power | Revised supply for the upgraded Pi and screen |
-| Cooling | Copper heatsinks and enclosure vents |
-| Software | Linux-based emulation environment |
-
-## Development and results
-
-| Area | First generation: Pi 4B | Upgrade: Pi 5 |
+| Part of the build | Pi 4 handheld | Pi 5 upgrade |
 | --- | --- | --- |
-| Display | 5-inch screen | 6-inch touchscreen |
-| Menu interaction | Physical controls | Added touch navigation |
-| Power | Previous handheld's supply | Revised power hardware |
-| Cooling | No dedicated vents; overheating encountered | Vents and copper heatsinks; cooler operation observed |
-| Emulation in my use | Games through PS1 | PSP games and selected PS2/Wii games |
+| Computer | Pi 4B | Pi 5 |
+| Screen | 5 inches | 6-inch touchscreen |
+| Menus | Physical controls | Added touch navigation |
+| Power | Previous supply | Different supply for the Pi and larger screen |
+| Cooling | No dedicated vents; overheated | Vents and copper heatsinks; ran cooler in use |
+| Games I ran | Systems through PS1 | PSP and some PS2/Wii games as well |
 
-### Apply the thermal lesson from the first build
+The game comparison describes my experience with these setups. I didn't keep game names, emulator settings, or frame-rate measurements, so it isn't a compatibility list or a claim that every game ran at full speed.
 
-The previous enclosure lacked dedicated ventilation. Adding vents and copper heatsinks made cooling part of the revised design, and I observed cooler operation during use.
+## Cooling
 
-### Carry touch-input experience into a new interface
+Heat was one of the problems I wanted to address after the Pi 4 build. That enclosure had no dedicated vents. For this version, I added ventilation and copper heatsinks, and it ran cooler during use. I didn't record temperatures for a direct comparison.
 
-My TV used touch regions for playback and display control. The handheld applied that experience to menu navigation, alongside the larger screen.
+## Touchscreen and power
 
-### Upgrade the supporting hardware together
+I used what I learned from adding touch controls to the mini TV to add menu navigation on the handheld. On the TV, touches paused playback or toggled the display; here, the touchscreen was used to move through menus.
 
-Changing the computer and screen also prompted a power-supply change. This made the project a system-integration revision involving compute, display, input, power, and cooling.
+The Pi 5 and larger display also needed a different power supply. I don't have the exact supply or screen model recorded.
 
-## Explore the project
+## Code and notes
 
-The included sketches are Leandro Linares's unchanged reference gamepad code.
+The repository includes **Leandro's original controller sketches**, unchanged. These handle physical gamepad inputs, not touchscreen navigation.
 
 | Resource | Contents |
 | --- | --- |
-| [Engineering notes](docs/engineering-notes.md) | Design progression and build observations |
-| [Reference software notes](docs/reference-software.md) | How the guide's controller sketches work |
-| [Grizzly sketch](upstream/leandro-gamepad/grizzly/grizzly.ino) | Reference controller without analog thumbsticks |
-| [Kodiak sketch](upstream/leandro-gamepad/kodiak/kodiak.ino) | Reference controller with analog thumbsticks |
-| [Source provenance](upstream/leandro-gamepad/UPSTREAM.md) | Attribution, revision, and reuse terms |
+| [Build notes](docs/engineering-notes.md) | How this project followed the earlier builds |
+| [Software notes](docs/reference-software.md) | Explanation of the reference sketches |
+| [Grizzly sketch](upstream/leandro-gamepad/grizzly/grizzly.ino) | Controller without analog thumbsticks |
+| [Kodiak sketch](upstream/leandro-gamepad/kodiak/kodiak.ino) | Controller with analog thumbsticks |
 
-## Documentation status
-
-This retrospective record currently contains documentation and reference code; photos, enclosure files, and my device configurations are unavailable. Exact hardware models, emulator settings, game titles, frame rates, and temperature measurements were not retained. Cooler operation and expanded emulation describe my experience, not controlled benchmarks or general PS2/Wii compatibility. Neither included controller variant is confirmed as my device's firmware, and the sketches do not implement touchscreen navigation.
+I don't currently have photos, enclosure files, or my device configuration for this version. Neither reference sketch is confirmed as the exact firmware I used. I'll add my own files if I recover them.
 
 ## Credits
 
-Main external reference: [How to build a handheld game console](https://leandrolinares.com/blog/diy-handheld-game-console) by **Leandro Linares**.
+Main reference: [Leandro Linares's handheld build guide](https://leandrolinares.com/blog/diy-handheld-game-console).
 
-Reference sketches: [Grizzly and Kodiak gamepad code](https://gist.github.com/lean8086/4cb525eae8061a3e8af11a29c369fec2), using [ArduinoJoystickLibrary](https://github.com/MHeironimus/ArduinoJoystickLibrary) by MHeironimus.
+The [Grizzly and Kodiak sketches](https://gist.github.com/lean8086/4cb525eae8061a3e8af11a29c369fec2) use [ArduinoJoystickLibrary](https://github.com/MHeironimus/ArduinoJoystickLibrary) by MHeironimus. Leandro's guide states [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); source details and reuse terms are in [UPSTREAM.md](upstream/leandro-gamepad/UPSTREAM.md).
 
-Leandro's guide states [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); attribution and reuse terms accompany the sketches. No game ROMs, BIOS files, or operating-system images are included.
+No ROMs, BIOS files, or operating-system images are included.
 
-## Related projects
+## Earlier builds
 
-- [Pi 4 handheld — first-generation build](https://github.com/JosephDickey/raspberry-pi-4-handheld)
-- [Touchscreen mini TV — touch-input experience](https://github.com/JosephDickey/raspberry-pi-touchscreen-tv)
+- [Pi 4 handheld](https://github.com/JosephDickey/raspberry-pi-4-handheld)
+- [Touchscreen mini TV](https://github.com/JosephDickey/raspberry-pi-touchscreen-tv)

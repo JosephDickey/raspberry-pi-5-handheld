@@ -19,7 +19,7 @@ Retrieved: 2026-09-08
 
 The sketch contents are unchanged. They are placed in separate matching sketch folders for Arduino IDE use.
 
-This source is included as reference material from the main build guide. Neither variant is confirmed as Joseph Dickey's original firmware. No authorship of these sketches is claimed by Joseph Dickey, and no touchscreen functionality is attributed to them.
+These are Leandro's original sketches, included for reference. I haven't confirmed which variant I used in my handheld. They handle physical controls, not touchscreen input.
 
 ## License notice
 
